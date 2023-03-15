@@ -60,5 +60,11 @@ public class Persona extends Humano {
 			Humano.setContHermanos();
 	}
 	
-	
+	public void printInfo() {
+		System.out.println(this.getNombre());
+		System.out.println("¿Es alto? " + this.getAlto());
+		System.out.println("¿Practica musica? " + this.getMusica());
+		System.out.println("¿Practica deporte? " + this.getDeporte());
+		System.out.println("¿Tiene hermanos? " + this.getHermanos());
+	}
 }

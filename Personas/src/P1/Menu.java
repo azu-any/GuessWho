@@ -6,12 +6,15 @@ public class Menu {
 	
 	public int win, game;
 	public File file;
-	public String path = "/Users/Azu/eclipse-workspace/Personas/src/P1/Usuarios/";
+	public String path;
 	
 	public Menu(String f) throws Exception {
 		
-		path += f;
-		
+		File dir = new File("src/P1/Usuarios");
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
+		path = "src/P1/Usuarios/" + f;
 		this.file = new File(path);
 		
 		if (this.file.exists()) {
@@ -38,8 +41,8 @@ public class Menu {
 		}
 	}
 	
-	public void winner() {
-		this.win++;
+	public void winner(int n) {
+		this.win += n;
 	}
 	
 	public void game() {
